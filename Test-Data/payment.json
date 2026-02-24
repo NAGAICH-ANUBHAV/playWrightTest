@@ -1,0 +1,8 @@
+{
+  "cardDetails": {
+    "name": "John Doe",
+    "cardNumber": "4242 4242 4242 4242",
+    "expiry": "12/34",
+    "cvv": "123"
+  }
+}
