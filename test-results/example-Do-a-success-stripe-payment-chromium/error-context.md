@@ -1,0 +1,123 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - alert [ref=e2]: Spree Commerce - CH Store - Directnine - CH
+  - generic:
+    - iframe
+  - generic [ref=e7]: Chat with us
+  - generic [ref=e9]:
+    - main [ref=e10]:
+      - generic [ref=e12]:
+        - generic [ref=e14]:
+          - list [ref=e15]:
+            - listitem [ref=e16]:
+              - generic [ref=e17]:
+                - img "Apple Nobsound TCP Full Frequency Mono Channel Digital Power Amplifier Audio Mini l (white)" [ref=e19]
+                - generic [ref=e20]: "1"
+              - paragraph [ref=e21]: Nobsound TCP Full Frequency Mono Channel Digital Power Amplifier Audio Mini l (white)
+              - paragraph [ref=e23]: £ GBP 369.68
+          - generic [ref=e25]:
+            - textbox "Enter discount code" [ref=e27]:
+              - /placeholder: Discount Code
+            - button "Apply" [disabled] [ref=e28]:
+              - generic [ref=e29]: Apply
+          - generic [ref=e30]:
+            - paragraph [ref=e31]:
+              - generic [ref=e32]: Subtotal
+              - generic [ref=e33]: £ GBP 369.68
+            - paragraph [ref=e34]:
+              - generic [ref=e35]: Shipping
+              - generic [ref=e36]: £ GBP 20.00
+          - paragraph [ref=e37]:
+            - generic [ref=e38]: Total
+            - generic [ref=e39]: £ GBP 389.68
+          - paragraph [ref=e40]: Save 20.0% (£ GBP 92.30 )
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - heading "Logo" [level=1] [ref=e45]:
+              - link "Logo" [ref=e46] [cursor=pointer]:
+                - /url: /
+                - img "Logo" [ref=e48]
+            - generic [ref=e49]:
+              - img [ref=e51]
+              - link "Cart" [ref=e53] [cursor=pointer]:
+                - /url: /cart
+                - generic [ref=e54]: Cart
+              - generic [ref=e56]: "2"
+              - link "Shipping" [ref=e57] [cursor=pointer]:
+                - /url: /shipping-details
+                - generic [ref=e58]: Shipping
+              - generic [ref=e60]: "3"
+              - generic [ref=e61]: Payment
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - heading "Contact Information" [level=2] [ref=e67]
+                  - generic [ref=e68]:
+                    - text: Already have an account?
+                    - button "Log in" [ref=e69] [cursor=pointer]
+                - generic [ref=e70]:
+                  - generic [ref=e71]: Email
+                  - textbox "Email" [ref=e72]: hmnfl-auto@satkh.com
+              - heading "Shipping Address" [level=2] [ref=e73]
+              - generic [ref=e75]:
+                - generic [ref=e76]: Country/region
+                - textbox "Country/region" [disabled] [ref=e77]: United Kingdom
+              - generic [ref=e78]:
+                - generic [ref=e80]:
+                  - generic [ref=e81]: First Name
+                  - textbox "First Name" [ref=e82]: hpsqqauto
+                - generic [ref=e84]:
+                  - generic [ref=e85]: Last Name
+                  - textbox "Last Name" [ref=e86]: qpzcmauto
+              - generic [ref=e88]:
+                - generic [ref=e89]: Street and house number
+                - textbox "Street and house number" [ref=e90]: lecldvexkwkafwbstxvwauto
+              - generic [ref=e92]:
+                - generic [ref=e93]: Additional address (optional)
+                - textbox "Additional address (optional)" [ref=e94]
+              - generic [ref=e95]:
+                - generic [ref=e97]:
+                  - generic [ref=e98]: Postal Code
+                  - textbox "Postal Code" [ref=e99]: AA9A 9AA
+                - generic [ref=e101]:
+                  - generic [ref=e102]: City
+                  - textbox "City" [ref=e103]: London
+              - generic [ref=e104]:
+                - generic [ref=e105]:
+                  - generic [ref=e106]: State
+                  - generic [ref=e110]:
+                    - combobox "State" [ref=e113]
+                    - img [ref=e117]
+                - paragraph [ref=e119]: State is required
+              - generic [ref=e122]:
+                - generic [ref=e123]: Phone
+                - textbox "Phone" [ref=e124]: "1234567890"
+              - generic [ref=e126]:
+                - checkbox "Save this information for next time" [checked] [ref=e127] [cursor=pointer]
+                - generic [ref=e128] [cursor=pointer]: Save this information for next time
+            - generic [ref=e129]:
+              - button "Continue" [active] [ref=e130] [cursor=pointer]
+              - paragraph [ref=e131]:
+                - link "Return to Cart" [ref=e132] [cursor=pointer]:
+                  - /url: /cart
+                  - img [ref=e133]
+                  - text: Return to Cart
+          - generic [ref=e135]:
+            - list [ref=e136]:
+              - listitem [ref=e137]:
+                - button "Refund policy" [ref=e138] [cursor=pointer]
+              - listitem [ref=e139]:
+                - button "Shipping policy" [ref=e140] [cursor=pointer]
+              - listitem [ref=e141]:
+                - button "Privacy policy" [ref=e142] [cursor=pointer]
+              - listitem [ref=e143]:
+                - button "Terms of service" [ref=e144] [cursor=pointer]
+            - paragraph [ref=e146]:
+              - text: All rights reserved DirectNine-Switzerland
+              - strong
+    - button "scroll page to top" [ref=e147] [cursor=pointer]:
+      - img [ref=e148]
+```
