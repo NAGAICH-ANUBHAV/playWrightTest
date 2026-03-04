@@ -1,50 +1,33 @@
 pipeline {
-    agent any
-
-    tools {
-        nodejs 'Node18'
+    agent {
+        docker {
+            image 'mcr.microsoft.com/playwright:v1.42.1-jammy'
+        }
     }
 
     stages {
-
         stage('Checkout') {
             steps {
-                checkout scm 
+                git 'https://github.com/YOUR_USERNAME/YOUR_REPO.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm ci'
-                bat 'npx playwright install --with-deps'
+                sh 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'npx playwright test'
-            }
-        }
-
-        stage('Archive Report') {
-            steps {
-                archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+                sh 'npx playwright test'
             }
         }
     }
 
     post {
         always {
-            publishHTML(target: [
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'Playwright HTML Report',
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true
-            ])
+            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
         }
     }
 }
-
-//testjenkinspipeline
