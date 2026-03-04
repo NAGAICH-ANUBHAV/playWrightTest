@@ -9,19 +9,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
 
         stage('Install Playwright Browsers') {
             steps {
-                bat 'npx playwright install'
+                sh 'npx playwright install'
             }
         }
 
         stage('Run Playwright Tests') {
             steps {
-                bat 'npx playwright test'
+                sh 'npx playwright test'
             }
         }
 
@@ -33,5 +33,3 @@ pipeline {
         }
     }
 }
-
-//test
