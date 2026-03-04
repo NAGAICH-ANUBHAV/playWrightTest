@@ -5,13 +5,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm ci'
+                bat 'npm install'
             }
         }
 
         stage('Install Browsers') {
             steps {
-                bat 'npx playwright install --with-deps'
+                bat 'npx playwright install'
             }
         }
 
