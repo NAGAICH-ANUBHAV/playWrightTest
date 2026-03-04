@@ -1,20 +1,21 @@
 pipeline {
     agent {
         docker {
-            image 'mcr.microsoft.com/playwright:v1.42.1-jammy'
+            image 'mcr.microsoft.com/playwright:v1.46.0-jammy'
         }
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/YOUR_USERNAME/YOUR_REPO.git'
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
+            }
+        }
+
+        stage('Install Browsers') {
+            steps {
+                sh 'npx playwright install --with-deps'
             }
         }
 
@@ -23,6 +24,7 @@ pipeline {
                 sh 'npx playwright test'
             }
         }
+
     }
 
     post {
