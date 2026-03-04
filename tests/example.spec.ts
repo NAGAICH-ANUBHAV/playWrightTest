@@ -1,5 +1,5 @@
 import { test } from './../Fixtures/generalFixture'
-import paymentData from '../test-data/payment.json'
+import paymentData from '../Test-Data/payment.json'
 import { Utils } from '../Utils/utils'
 import { userDetailsDataWithEmail } from '../Test-Data/dataObjects'
 
