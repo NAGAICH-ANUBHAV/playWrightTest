@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright test'
+                sh 'npx playwright test --reporter=html'
             }
         }
 
@@ -30,7 +30,7 @@ pipeline {
     post {
     always {
         publishHTML([
-            allowMissing: false,
+            allowMissing: true,
             alwaysLinkToLastBuild: true,
             keepAll: true,
             reportDir: 'playwright-report',
