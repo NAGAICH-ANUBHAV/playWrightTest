@@ -3,6 +3,7 @@ pipeline {
     agent {
         docker {
             image 'mcr.microsoft.com/playwright:v1.57.0-jammy'
+            args '--ipc=host'
         }
     }
 
@@ -10,20 +11,30 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
+            }
+        }
+
+        stage('Install Browsers') {
+            steps {
+                sh 'npx playwright install --with-deps'
             }
         }
 
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright test --reporter=html'
+                sh 'npx playwright test'
             }
         }
 
     }
 
     post {
+
         always {
+
+            junit 'test-results/results.xml'
+
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
@@ -32,6 +43,8 @@ pipeline {
                 reportFiles: 'index.html',
                 reportName: 'Playwright Report'
             ])
+
+            archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', fingerprint: true
         }
     }
 }
