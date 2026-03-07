@@ -7,11 +7,22 @@ pipeline {
         }
     }
 
+    options {
+        skipDefaultCheckout(true)
+        timestamps()
+    }
+
     stages {
 
         stage('Clean Workspace') {
             steps {
                 deleteDir()
+            }
+        }
+
+        stage('Checkout Code') {
+            steps {
+                checkout scm
             }
         }
 
@@ -39,7 +50,7 @@ pipeline {
 
         always {
 
-            junit 'test-results/results.xml'
+            junit allowEmptyResults: true, testResults: 'test-results/results.xml'
 
             publishHTML(target: [
                 allowMissing: true,
@@ -50,7 +61,13 @@ pipeline {
                 reportName: 'Playwright Report'
             ])
 
-            archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', fingerprint: true
+            archiveArtifacts artifacts: '''
+                playwright-report/**
+                test-results/**
+                test-results/**/*.png
+                test-results/**/*.webm
+                test-results/**/*.zip
+            ''', fingerprint: true
         }
     }
 }
